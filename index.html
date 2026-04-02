@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalyan Aravalli — Senior Product Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0E14;
+    --bg2: #111820;
+    --bg3: #162030;
+    --teal: #1D9E75;
+    --teal-light: #5DCAA5;
+    --teal-dim: #0F6E56;
+    --text: #E8EDF2;
+    --muted: #7A8A9A;
+    --border: rgba(29,158,117,0.15);
+    --card: rgba(22,32,48,0.8);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.2rem 4rem;
+    background:rgba(10,14,20,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--teal-light);letter-spacing:0.02em}
+  .nav-links{display:flex;gap:2rem}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+  .nav-links a:hover{color:var(--teal-light)}
+  .nav-cta{
+    background:var(--teal);color:white;
+    padding:0.5rem 1.2rem;border-radius:6px;
+    text-decoration:none;font-size:0.85rem;font-weight:500;
+    transition:background 0.2s;
+  }
+  .nav-cta:hover{background:var(--teal-light)}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding:8rem 4rem 4rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;
+    top:-200px;right:-200px;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-content{max-width:720px;animation:fadeUp 0.8s ease both}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    background:rgba(29,158,117,0.1);
+    border:1px solid rgba(29,158,117,0.3);
+    color:var(--teal-light);
+    padding:0.35rem 0.9rem;border-radius:20px;
+    font-size:0.8rem;font-weight:500;
+    margin-bottom:1.5rem;
+  }
+  .hero-tag::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+  h1{
+    font-family:'Syne',sans-serif;
+    font-size:clamp(2.8rem,6vw,4.5rem);
+    font-weight:800;line-height:1.05;
+    margin-bottom:1.5rem;
+    letter-spacing:-0.02em;
+  }
+  h1 span{color:var(--teal-light)}
+  .hero-sub{
+    font-size:1.15rem;color:var(--muted);
+    max-width:560px;margin-bottom:2.5rem;
+    font-weight:300;line-height:1.8;
+  }
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-primary{
+    background:var(--teal);color:white;
+    padding:0.8rem 1.8rem;border-radius:8px;
+    text-decoration:none;font-weight:500;
+    transition:all 0.2s;border:none;cursor:pointer;font-size:1rem;
+  }
+  .btn-primary:hover{background:var(--teal-light);transform:translateY(-1px)}
+  .btn-outline{
+    border:1px solid var(--border);color:var(--text);
+    padding:0.8rem 1.8rem;border-radius:8px;
+    text-decoration:none;font-weight:500;
+    transition:all 0.2s;
+    background:transparent;cursor:pointer;font-size:1rem;
+  }
+  .btn-outline:hover{border-color:var(--teal);color:var(--teal-light)}
+
+  .hero-stats{
+    display:flex;gap:3rem;margin-top:4rem;
+    padding-top:2rem;
+    border-top:1px solid var(--border);
+  }
+  .stat-num{
+    font-family:'Syne',sans-serif;
+    font-size:2rem;font-weight:800;color:var(--teal-light);
+  }
+  .stat-label{font-size:0.8rem;color:var(--muted);margin-top:0.2rem}
+
+  /* SECTIONS */
+  section{padding:6rem 4rem}
+  .section-tag{
+    font-size:0.75rem;font-weight:600;
+    color:var(--teal);letter-spacing:0.12em;
+    text-transform:uppercase;margin-bottom:1rem;
+  }
+  h2{
+    font-family:'Syne',sans-serif;
+    font-size:clamp(1.8rem,3vw,2.5rem);
+    font-weight:800;margin-bottom:1rem;
+    letter-spacing:-0.02em;
+  }
+  .section-sub{color:var(--muted);max-width:540px;margin-bottom:3rem;font-weight:300}
+
+  /* CASE STUDIES */
+  .cases{background:var(--bg2)}
+  .case-grid{display:grid;gap:1.5rem}
+  .case-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;padding:2rem 2.5rem;
+    position:relative;overflow:hidden;
+    transition:border-color 0.3s, transform 0.3s;
+    display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;
+  }
+  .case-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+  .case-card::before{
+    content:'';position:absolute;
+    left:0;top:0;bottom:0;width:3px;
+    background:var(--teal);
+    border-radius:16px 0 0 16px;
+  }
+  .case-num{
+    font-family:'Syne',sans-serif;
+    font-size:3.5rem;font-weight:800;
+    color:rgba(29,158,117,0.08);
+    position:absolute;right:2rem;top:1rem;
+    line-height:1;
+  }
+  .case-company{
+    font-size:0.75rem;font-weight:600;
+    color:var(--teal);letter-spacing:0.1em;
+    text-transform:uppercase;margin-bottom:0.5rem;
+  }
+  .case-title{
+    font-family:'Syne',sans-serif;
+    font-size:1.3rem;font-weight:700;
+    margin-bottom:0.8rem;line-height:1.3;
+  }
+  .case-desc{color:var(--muted);font-size:0.95rem;margin-bottom:1.5rem;font-weight:300}
+  .case-metrics{display:flex;gap:1.5rem;flex-wrap:wrap}
+  .metric{
+    background:rgba(29,158,117,0.08);
+    border:1px solid rgba(29,158,117,0.2);
+    padding:0.4rem 0.9rem;border-radius:6px;
+    font-size:0.8rem;color:var(--teal-light);font-weight:500;
+  }
+
+  /* SKILLS */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1rem;
+  }
+  .skill-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;padding:1.5rem;
+    transition:border-color 0.3s;
+  }
+  .skill-card:hover{border-color:var(--teal)}
+  .skill-icon{font-size:1.5rem;margin-bottom:0.8rem}
+  .skill-title{font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.5rem}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem}
+  .skill-tag{
+    background:rgba(255,255,255,0.05);
+    padding:0.25rem 0.6rem;border-radius:4px;
+    font-size:0.75rem;color:var(--muted);
+  }
+
+  /* NEWSLETTER */
+  .newsletter{background:var(--bg2)}
+  .newsletter-card{
+    background:linear-gradient(135deg,var(--teal-dim) 0%,var(--bg3) 100%);
+    border:1px solid rgba(29,158,117,0.3);
+    border-radius:20px;padding:3rem;
+    display:grid;grid-template-columns:1fr auto;
+    gap:2rem;align-items:center;
+  }
+  .newsletter-title{
+    font-family:'Syne',sans-serif;
+    font-size:1.6rem;font-weight:800;margin-bottom:0.5rem;
+  }
+  .newsletter-sub{color:rgba(232,237,242,0.7);font-size:0.95rem;font-weight:300}
+  .newsletter-link{
+    background:white;color:var(--teal-dim);
+    padding:0.9rem 2rem;border-radius:8px;
+    text-decoration:none;font-weight:700;
+    white-space:nowrap;font-family:'Syne',sans-serif;
+    transition:all 0.2s;
+  }
+  .newsletter-link:hover{transform:translateY(-2px);background:var(--teal-light);color:white}
+
+  /* CONTACT */
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:4rem;align-items:start;
+  }
+  .contact-info h3{
+    font-family:'Syne',sans-serif;
+    font-size:1.8rem;font-weight:800;margin-bottom:1rem;
+  }
+  .contact-info p{color:var(--muted);font-weight:300;margin-bottom:2rem}
+  .contact-links{display:flex;flex-direction:column;gap:0.8rem}
+  .contact-link{
+    display:flex;align-items:center;gap:0.8rem;
+    color:var(--muted);text-decoration:none;
+    font-size:0.95rem;transition:color 0.2s;
+  }
+  .contact-link:hover{color:var(--teal-light)}
+  .contact-link-icon{
+    width:36px;height:36px;
+    background:rgba(29,158,117,0.1);
+    border:1px solid var(--border);
+    border-radius:8px;display:flex;
+    align-items:center;justify-content:center;
+    font-size:0.9rem;flex-shrink:0;
+  }
+  .contact-form{display:flex;flex-direction:column;gap:1rem}
+  .form-group{display:flex;flex-direction:column;gap:0.4rem}
+  .form-label{font-size:0.8rem;color:var(--muted);font-weight:500}
+  .form-input, .form-textarea{
+    background:var(--bg2);
+    border:1px solid var(--border);
+    border-radius:8px;padding:0.8rem 1rem;
+    color:var(--text);font-family:'DM Sans',sans-serif;
+    font-size:0.95rem;transition:border-color 0.2s;
+    width:100%;
+  }
+  .form-input:focus,.form-textarea:focus{
+    outline:none;border-color:var(--teal);
+  }
+  .form-textarea{min-height:120px;resize:vertical}
+  .form-submit{
+    background:var(--teal);color:white;
+    padding:0.9rem;border-radius:8px;
+    border:none;cursor:pointer;
+    font-family:'Syne',sans-serif;font-weight:700;
+    font-size:1rem;transition:all 0.2s;
+  }
+  .form-submit:hover{background:var(--teal-light);transform:translateY(-1px)}
+  .form-success{
+    background:rgba(29,158,117,0.1);
+    border:1px solid rgba(29,158,117,0.3);
+    border-radius:8px;padding:1rem;
+    color:var(--teal-light);font-size:0.9rem;
+    display:none;text-align:center;
+  }
+
+  /* FOOTER */
+  footer{
+    padding:2rem 4rem;
+    border-top:1px solid var(--border);
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  footer p{color:var(--muted);font-size:0.85rem}
+
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  @media(max-width:768px){
+    nav{padding:1rem 1.5rem}
+    .nav-links{display:none}
+    .hero{padding:6rem 1.5rem 3rem}
+    section{padding:4rem 1.5rem}
+    .hero-stats{gap:1.5rem}
+    .case-card{grid-template-columns:1fr}
+    .newsletter-card{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    footer{flex-direction:column;gap:1rem;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">KA.pm</div>
+  <div class="nav-links">
+    <a href="#cases">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Hire me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Open to Senior PM roles — Hyderabad / Bangalore / Remote</div>
+    <h1>Product leader.<br>AI builder.<br><span>11 years in.</span></h1>
+    <p class="hero-sub">I build products that scale — from 0 to 20M users at Paytm, enterprise SaaS at Arcadis, and now AI-powered tools that automate the work no one wants to do manually.</p>
+    <div class="hero-actions">
+      <a href="#cases" class="btn-primary">See my work</a>
+      <a href="#contact" class="btn-outline">Get in touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">20M+</div>
+        <div class="stat-label">Users impacted</div>
+      </div>
+      <div>
+        <div class="stat-num">$2M+</div>
+        <div class="stat-label">Revenue generated</div>
+      </div>
+      <div>
+        <div class="stat-num">11yr</div>
+        <div class="stat-label">PM experience</div>
+      </div>
+      <div>
+        <div class="stat-num">ISB</div>
+        <div class="stat-label">PM Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases" id="cases">
+  <div class="section-tag">Selected work</div>
+  <h2>Case Studies</h2>
+  <p class="section-sub">Three products, three different problems — same obsession with outcomes over outputs.</p>
+
+  <div class="case-grid">
+
+    <div class="case-card">
+      <div>
+        <div class="case-company">Paytm m'Loyal — FinTech</div>
+        <div class="case-title">Scaling a loyalty platform to 20M users and $2M in incremental revenue</div>
+        <p class="case-desc">Led end-to-end product strategy for a financial engagement platform processing 0.3M transactions daily. Partnered with McKinsey to redesign customer journeys, boosting NPS by 12 points and referrals by 50%.</p>
+        <div class="case-metrics">
+          <span class="metric">20M+ users</span>
+          <span class="metric">$2M revenue</span>
+          <span class="metric">NPS +12pts</span>
+          <span class="metric">50% referral growth</span>
+          <span class="metric">18% retention uplift</span>
+        </div>
+      </div>
+      <div class="case-num">01</div>
+    </div>
+
+    <div class="case-card">
+      <div>
+        <div class="case-company">Arcadis — Enterprise SaaS</div>
+        <div class="case-title">Reducing enterprise client onboarding by 30% through API-first redesign</div>
+        <p class="case-desc">Owned product strategy for a global smart city SaaS platform. Championed API-first design, coordinated Legal and Compliance requirements, and drove 10% YoY revenue growth through disciplined GTM execution.</p>
+        <div class="case-metrics">
+          <span class="metric">30% faster onboarding</span>
+          <span class="metric">10% YoY revenue</span>
+          <span class="metric">15% asset utilisation</span>
+          <span class="metric">Global clients</span>
+        </div>
+      </div>
+      <div class="case-num">02</div>
+    </div>
+
+    <div class="case-card">
+      <div>
+        <div class="case-company">Personal Project — AI Automation</div>
+        <div class="case-title">Building an AI agent that finds, scores and tracks Senior PM jobs — automatically</div>
+        <p class="case-desc">Designed and built a fully automated job search pipeline using Claude AI, Make.com, and Notion. The agent fetches new roles every 6 hours, scores fit out of 10, filters by salary, and generates tailored cover letters — no code required.</p>
+        <div class="case-metrics">
+          <span class="metric">Claude API</span>
+          <span class="metric">Make.com</span>
+          <span class="metric">Notion tracker</span>
+          <span class="metric">Auto cover letters</span>
+          <span class="metric">6hr automation cycle</span>
+        </div>
+      </div>
+      <div class="case-num">03</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-tag">Capabilities</div>
+  <h2>What I bring</h2>
+  <p class="section-sub">Product instinct sharpened across FinTech, SaaS, and AI — with the technical depth to build, not just spec.</p>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🗺</div>
+      <div class="skill-title">Product Strategy</div>
+      <p style="color:var(--muted);font-size:0.9rem">Roadmaps, OKRs, prioritisation frameworks, and stakeholder alignment across complex organisations.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Roadmapping</span>
+        <span class="skill-tag">OKRs / KPIs</span>
+        <span class="skill-tag">GTM</span>
+        <span class="skill-tag">Competitive analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">⚙️</div>
+      <div class="skill-title">Execution & Delivery</div>
+      <p style="color:var(--muted);font-size:0.9rem">User stories, acceptance criteria, sprint management, and cross-functional delivery at pace.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Agile / Scrum</span>
+        <span class="skill-tag">User stories</span>
+        <span class="skill-tag">CSPO certified</span>
+        <span class="skill-tag">Jira / Confluence</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-title">Data & Analytics</div>
+      <p style="color:var(--muted);font-size:0.9rem">Data-driven decision making — from SQL queries to Power BI dashboards to A/B test design.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">A/B testing</span>
+        <span class="skill-tag">Data modelling</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-title">AI & Automation</div>
+      <p style="color:var(--muted);font-size:0.9rem">Building real AI-powered workflows using Claude API, Make.com, and modern automation tools.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Claude API</span>
+        <span class="skill-tag">Make.com</span>
+        <span class="skill-tag">Prompt engineering</span>
+        <span class="skill-tag">AI pipelines</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🏦</div>
+      <div class="skill-title">Domain Expertise</div>
+      <p style="color:var(--muted);font-size:0.9rem">Deep experience across FinTech, enterprise SaaS, MarTech, loyalty platforms, and urban mobility.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">FinTech</span>
+        <span class="skill-tag">SaaS</span>
+        <span class="skill-tag">MarTech</span>
+        <span class="skill-tag">Loyalty</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🤝</div>
+      <div class="skill-title">Stakeholder Management</div>
+      <p style="color:var(--muted);font-size:0.9rem">Coordinating across Engineering, Design, Legal, Compliance, and C-suite to ship on time.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Executive comms</span>
+        <span class="skill-tag">Vendor management</span>
+        <span class="skill-tag">Compliance coordination</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-card">
+    <div>
+      <div class="section-tag" style="margin-bottom:0.5rem">Every Monday</div>
+      <div class="newsletter-title">PM + AI Weekly</div>
+      <p class="newsletter-sub">How senior PMs use AI to find better roles, build faster, and earn more. Real tools. Real workflows. No fluff.</p>
+    </div>
+    <a href="https://kalyanpm.substack.com" target="_blank" class="newsletter-link">Subscribe free →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-tag">Let's talk</div>
+  <h2>Get in touch</h2>
+  <p class="section-sub">Open to Senior PM roles in Hyderabad, Bangalore, or Remote. Also happy to connect on product, AI, or automation.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Kalyan Aravalli</h3>
+      <p>Senior Product Manager with 11+ years building products at scale. ISB Certified. CSPO. Based in Hyderabad.</p>
+      <div class="contact-links">
+        <a href="mailto:aravallikalyan@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉</div>
+          aravallikalyan@gmail.com
+        </a>
+        <a href="tel:+919742924250" class="contact-link">
+          <div class="contact-link-icon">📞</div>
+          +91 97429 24250
+        </a>
+        <a href="https://linkedin.com/in/kalyan-aravalli" target="_blank" class="contact-link">
+          <div class="contact-link-icon">in</div>
+          linkedin.com/in/kalyan-aravalli
+        </a>
+        <a href="https://kalyanpm.substack.com" target="_blank" class="contact-link">
+          <div class="contact-link-icon">✍</div>
+          PM + AI Weekly Newsletter
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form">
+        <div class="form-group">
+          <label class="form-label">Your name</label>
+          <input type="text" class="form-input" id="fname" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your email</label>
+          <input type="email" class="form-input" id="femail" placeholder="jane@company.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" id="fmessage" placeholder="Tell me about the role or what you'd like to discuss..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Send message →</button>
+        <div class="form-success" id="success">Thanks! I'll get back to you within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Kalyan Aravalli — Senior Product Manager</p>
+  <p style="color:var(--muted);font-size:0.8rem">Hyderabad, India · Open to remote</p>
+</footer>
+
+<script>
+function submitForm(){
+  const name = document.getElementById('fname').value;
+  const email = document.getElementById('femail').value;
+  const msg = document.getElementById('fmessage').value;
+  if(!name || !email || !msg){
+    alert('Please fill in all fields');return;
+  }
+  const mailto = `mailto:aravallikalyan@gmail.com?subject=Portfolio inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nFrom: ' + name + '\nEmail: ' + email)}`;
+  window.location.href = mailto;
+  document.getElementById('success').style.display = 'block';
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
