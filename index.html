@@ -11,18 +11,14 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-weight:300;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-
-/* NAV */
 header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(248,246,242,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:64px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:var(--font-d);font-size:1.15rem;font-weight:400;color:var(--ink);letter-spacing:0.02em}
 .logo span{color:var(--navy)}
-.nav-right{display:flex;align-items:center;gap:36px}
+.nav-right{display:flex;align-items:center;gap:32px}
 .nav-right a{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);text-decoration:none;transition:color 0.2s}
 .nav-right a:hover{color:var(--ink)}
 .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 22px;font-size:0.7rem!important}
-
-/* HERO */
 .hero{padding-top:64px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--rule)}
 .hero-inner{max-width:var(--max);margin:0 auto;padding:80px var(--pad);display:grid;grid-template-columns:1fr 360px;gap:80px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:28px}
@@ -41,24 +37,12 @@ h1 em{font-style:italic;color:var(--navy)}
 .hs-label{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
 .hs-num{font-family:var(--font-d);font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1;margin-bottom:4px;letter-spacing:-0.02em}
 .hs-note{font-size:0.78rem;color:var(--ink-30)}
-
-/* STRIP */
-.strip{background:var(--white);border-bottom:1px solid var(--rule)}
-.strip-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex}
-.strip-item{flex:1;padding:18px 0;border-right:1px solid var(--rule);padding-right:28px;margin-right:28px}
-.strip-item:last-child{border-right:none;margin-right:0}
-.si-label{font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-30);margin-bottom:4px}
-.si-val{font-size:0.85rem;color:var(--ink);font-weight:400}
-
-/* SECTIONS */
 .section{padding:96px 0;border-bottom:1px solid var(--rule)}
 .section-alt{background:var(--white)}
 .section-head{display:grid;grid-template-columns:200px 1fr;gap:64px;margin-bottom:64px;align-items:start}
 .section-tag{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-30);padding-top:10px}
 .section-head h2{font-family:var(--font-d);font-size:clamp(1.9rem,3vw,2.8rem);font-weight:300;line-height:1.2;letter-spacing:-0.01em}
 .section-head p{font-size:0.92rem;color:var(--ink-60);margin-top:14px;line-height:1.85;max-width:520px}
-
-/* CASES */
 .case{display:grid;grid-template-columns:200px 1fr;gap:64px;padding:56px 0;border-top:1px solid var(--rule);align-items:start}
 .case:last-child{border-bottom:1px solid var(--rule)}
 .case-num{font-family:var(--font-d);font-size:0.78rem;color:var(--ink-30);font-weight:300;margin-bottom:14px;letter-spacing:0.04em}
@@ -71,28 +55,38 @@ h1 em{font-style:italic;color:var(--navy)}
 .section-alt .m-cell{background:var(--white)}
 .m-val{font-family:var(--font-d);font-size:1.6rem;font-weight:300;color:var(--ink);line-height:1;margin-bottom:5px;letter-spacing:-0.01em}
 .m-label{font-size:0.7rem;font-weight:400;color:var(--ink-60);line-height:1.4}
-
-/* EXPERTISE */
-.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
-.exp-cell{padding:36px 30px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background 0.2s}
-.exp-cell:hover{background:var(--navy-soft)}
-.exp-area{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
-.exp-name{font-family:var(--font-d);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.3}
-.exp-body{font-size:0.8rem;color:var(--ink-60);line-height:1.85}
-
-/* NEWSLETTER */
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:64px;padding:48px 0;border-top:1px solid var(--rule);align-items:start}
+.exp-item:last-child{border-bottom:1px solid var(--rule)}
+.exp-role{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.exp-co{font-family:var(--font-d);font-size:1.05rem;font-weight:400;color:var(--ink);margin-bottom:6px}
+.exp-period{font-size:0.75rem;color:var(--ink-30);font-weight:300}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:10px}
+.exp-bullets li{font-size:0.88rem;color:var(--ink-60);line-height:1.8;padding-left:18px;position:relative}
+.exp-bullets li::before{content:'--';position:absolute;left:0;color:var(--ink-30);font-size:0.7rem;top:3px;letter-spacing:-1px}
+.exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.exp-tag{display:inline-block;padding:4px 12px;border:1px solid var(--rule);font-size:0.72rem;color:var(--ink-60);font-weight:400;letter-spacing:0.04em}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.skill-cell{padding:36px 30px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background 0.2s}
+.skill-cell:hover{background:var(--navy-soft)}
+.skill-area{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.skill-name{font-family:var(--font-d);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.skill-body{font-size:0.8rem;color:var(--ink-60);line-height:1.85}
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.edu-cell{padding:32px 36px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background 0.2s}
+.edu-cell:hover{background:var(--navy-soft)}
+.edu-type{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.edu-degree{font-family:var(--font-d);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.edu-inst{font-size:0.85rem;color:var(--ink-60);font-weight:300}
+.edu-year{font-size:0.75rem;color:var(--ink-30);margin-top:4px;font-weight:300}
 .nl-box{background:var(--navy);display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;padding:52px 60px}
 .nl-tag{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:10px}
 .nl-title{font-family:var(--font-d);font-size:1.8rem;font-weight:300;color:var(--white);margin-bottom:8px;line-height:1.2}
 .nl-desc{font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.75}
 .nl-btn{display:inline-block;background:var(--white);color:var(--navy);padding:14px 32px;text-decoration:none;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;transition:opacity 0.2s}
 .nl-btn:hover{opacity:0.85}
-
-/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:200px 1fr 1fr;gap:64px}
 .contact-tag{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-30);padding-top:10px}
 .contact-info h3{font-family:var(--font-d);font-size:1.7rem;font-weight:300;margin-bottom:14px;line-height:1.2}
-.contact-info p{font-size:0.88rem;color:var(--ink-60);margin-bottom:32px;line-height:1.8}
 .c-links{display:flex;flex-direction:column}
 .c-link{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink-60);font-size:0.85rem;transition:color 0.2s}
 .c-link:first-child{border-top:1px solid var(--rule)}
@@ -107,30 +101,23 @@ h1 em{font-style:italic;color:var(--navy)}
 .f-submit{background:var(--ink);color:var(--white);border:none;padding:13px 28px;font-family:var(--font-b);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;align-self:flex-start;margin-top:4px}
 .f-submit:hover{background:var(--navy)}
 .f-sent{font-size:0.8rem;color:var(--navy);display:none;margin-top:8px}
-
-/* FOOTER */
 footer{background:var(--white);border-top:1px solid var(--rule)}
 .footer-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:56px;display:flex;align-items:center;justify-content:space-between}
 footer p{font-size:0.75rem;color:var(--ink-30);font-weight:300}
-
-/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero-badge{animation:fadeUp 0.6s ease 0.1s both}
 h1{animation:fadeUp 0.6s ease 0.2s both}
 .hero-text{animation:fadeUp 0.6s ease 0.3s both}
 .hero-btns{animation:fadeUp 0.6s ease 0.4s both}
 .hero-card{animation:fadeUp 0.6s ease 0.5s both}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   :root{--pad:24px}
   .nav-right a:not(.nav-cta){display:none}
   .hero-inner{grid-template-columns:1fr;padding:48px var(--pad)}
-  .strip-inner{flex-wrap:wrap}
-  .strip-item{flex:0 0 50%;border-bottom:1px solid var(--rule)}
-  .section-head,.case,.contact-grid{grid-template-columns:1fr;gap:24px}
+  .section-head,.case,.exp-item,.contact-grid{grid-template-columns:1fr;gap:24px}
   .metrics{grid-template-columns:1fr 1fr}
-  .exp-grid{grid-template-columns:1fr 1fr}
+  .skill-grid{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr}
   .nl-box{grid-template-columns:1fr;gap:24px;padding:36px 28px}
   .section{padding:60px 0}
 }
@@ -143,8 +130,9 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
     <div class="logo">Kalyan <span>Aravalli</span></div>
     <div class="nav-right">
       <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
       <a href="#expertise">Expertise</a>
-      <a href="#newsletter">Newsletter</a>
+      <a href="#education">Education</a>
       <a href="#contact" class="nav-cta">Hire me</a>
     </div>
   </div>
@@ -162,26 +150,10 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
       </div>
     </div>
     <div class="hero-card">
-      <div class="hero-stat">
-        <div class="hs-label">Users impacted</div>
-        <div class="hs-num">20M+</div>
-        <div class="hs-note">Paytm loyalty platform</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hs-label">Revenue generated</div>
-        <div class="hs-num">$7M+</div>
-        <div class="hs-note">Incremental product growth</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hs-label">Onboarding reduced</div>
-        <div class="hs-num">30%</div>
-        <div class="hs-note">Enterprise SaaS at Arcadis</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hs-label">Certifications</div>
-        <div class="hs-num" style="font-size:1.3rem;letter-spacing:0">ISB · CSPO</div>
-        <div class="hs-note">Product Management · Scrum</div>
-      </div>
+      <div class="hero-stat"><div class="hs-label">Users impacted</div><div class="hs-num">20M+</div><div class="hs-note">Paytm loyalty platform</div></div>
+      <div class="hero-stat"><div class="hs-label">Revenue generated</div><div class="hs-num">$7M+</div><div class="hs-note">Incremental product growth</div></div>
+      <div class="hero-stat"><div class="hs-label">Onboarding reduced</div><div class="hs-num">30%</div><div class="hs-note">Enterprise SaaS at Arcadis</div></div>
+      <div class="hero-stat"><div class="hs-label">Certifications</div><div class="hs-num" style="font-size:1.3rem;letter-spacing:0">ISB · CSPO</div><div class="hs-note">Product Management · Scrum</div></div>
     </div>
   </div>
 </div>
@@ -190,18 +162,10 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
   <div class="wrap">
     <div class="section-head">
       <div class="section-tag">Selected work</div>
-      <div>
-        <h2>Three products.<br>Real outcomes.</h2>
-        <p>I measure success in metrics, not deliverables. Here is what the work actually produced.</p>
-      </div>
+      <div><h2>Three products.<br>Real outcomes.</h2><p>I measure success in metrics, not deliverables. Here is what the work actually produced.</p></div>
     </div>
-
     <div class="case">
-      <div>
-        <div class="case-num">01 / 03</div>
-        <div class="case-co">Paytm m'Loyal</div>
-        <div class="case-period">Jul 2017 – May 2019</div>
-      </div>
+      <div><div class="case-num">01 / 03</div><div class="case-co">Paytm m'Loyal</div><div class="case-period">Jul 2017 – May 2019</div></div>
       <div>
         <div class="case-title">Scaling a FinTech loyalty platform to 20 million users</div>
         <p class="case-body">Owned the end-to-end product roadmap for a financial loyalty and engagement platform processing 300,000 transactions daily. Wrote user stories, drove sprint execution, and coordinated across Engineering, Design, Analytics, and Compliance. Partnered with McKinsey to redesign customer journeys — improving NPS by 12 points and generating $7M+ in incremental revenue through lifecycle-based engagement and referral optimisation.</p>
@@ -213,13 +177,8 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
         </div>
       </div>
     </div>
-
     <div class="case">
-      <div>
-        <div class="case-num">02 / 03</div>
-        <div class="case-co">Arcadis</div>
-        <div class="case-period">Sep 2022 – Present</div>
-      </div>
+      <div><div class="case-num">02 / 03</div><div class="case-co">Arcadis</div><div class="case-period">Sep 2022 – Present</div></div>
       <div>
         <div class="case-title">Reducing enterprise onboarding by 30% through API-first product design</div>
         <p class="case-body">Defined and executed product strategy for a global smart city SaaS platform serving enterprise clients across multiple geographies. Led API-first redesign that eliminated manual onboarding bottlenecks. Coordinated with Legal and Compliance for regulatory clearance, managed third-party vendor roadmaps, and drove 10% year-on-year revenue growth through disciplined GTM execution and adoption-focused feature releases.</p>
@@ -231,13 +190,8 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
         </div>
       </div>
     </div>
-
     <div class="case">
-      <div>
-        <div class="case-num">03 / 03</div>
-        <div class="case-co">Personal Project</div>
-        <div class="case-period">2026</div>
-      </div>
+      <div><div class="case-num">03 / 03</div><div class="case-co">Personal Project</div><div class="case-period">2026</div></div>
       <div>
         <div class="case-title">Building an AI agent that automates Senior PM job search end to end</div>
         <p class="case-body">Designed and built a fully automated job search pipeline using Claude API, Make.com, and Notion — with zero custom code. The agent fetches new PM roles every 6 hours across multiple job boards, scores candidate fit out of 10, filters by salary threshold, and generates tailored cover letters as Gmail drafts automatically. A practical demonstration of AI-first product thinking applied to a real personal problem.</p>
@@ -252,45 +206,140 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
   </div>
 </div>
 
-<div class="section section-alt" id="expertise">
+<div class="section section-alt" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Career history</div>
+      <div><h2>Eleven years.<br>Seven companies.</h2><p>A full record of where I have worked, what I built, and the outcomes I delivered.</p></div>
+    </div>
+
+    <div class="exp-item">
+      <div><div class="exp-role">Group Product Manager</div><div class="exp-co">Arcadis</div><div class="exp-period">Sep 2022 – Present</div></div>
+      <div>
+        <ul class="exp-bullets">
+          <li>Defined product strategy for Enterprise Asset Management and Curbside Management SaaS platforms, improving operational efficiency for global city clients.</li>
+          <li>Launched data-driven features that improved asset utilization rates by 15%+ across pilots.</li>
+          <li>Championed API-first design to enable faster integrations, reducing client onboarding time by 30%.</li>
+          <li>Drove stakeholder adoption and achieved successful rollout in multiple cities, resulting in 10% YoY revenue growth.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">EAM · SaaS</span><span class="exp-tag">30% faster onboarding</span><span class="exp-tag">10% YoY revenue</span><span class="exp-tag">15%+ asset utilisation</span></div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div><div class="exp-role">Product Manager – Identity Resolution</div><div class="exp-co">FullContact Inc.</div><div class="exp-period">Jan 2021 – Sep 2022</div></div>
+      <div>
+        <ul class="exp-bullets">
+          <li>Delivered data management and identity resolution platform, driving adoption among enterprise clients across Retail and AdTech.</li>
+          <li>Increased platform adoption by 25% through persona mapping and A/B tested features.</li>
+          <li>Established data literacy frameworks, improving analytics usage across business teams by 40%.</li>
+          <li>Defined OKRs and KPIs, aligning product roadmap with revenue growth and data accuracy goals.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Identity Resolution</span><span class="exp-tag">25% adoption growth</span><span class="exp-tag">40% analytics uplift</span></div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div><div class="exp-role">Senior Product Manager</div><div class="exp-co">Karvy Next</div><div class="exp-period">Jun 2019 – Dec 2020</div></div>
+      <div>
+        <ul class="exp-bullets">
+          <li>Spearheaded development of Last-Mile Delivery Optimization platform, reducing delivery costs by 20% for enterprise clients.</li>
+          <li>Built product roadmap from ground-up; delivered MVP in 6 months, accelerating GTM timelines.</li>
+          <li>Improved customer satisfaction scores (CSAT) by 15% through usability-driven feature enhancements.</li>
+          <li>Identified and onboarded strategic partners, expanding solution coverage to 3 major logistics providers.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Last-Mile Logistics</span><span class="exp-tag">20% cost reduction</span><span class="exp-tag">MVP in 6 months</span><span class="exp-tag">CSAT +15%</span></div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div><div class="exp-role">Manager – Product and Analytics</div><div class="exp-co">Paytm m'Loyal</div><div class="exp-period">Jul 2017 – May 2019</div></div>
+      <div>
+        <ul class="exp-bullets">
+          <li>Scaled loyalty and engagement platform to 20M+ users handling 0.3M transactions per day.</li>
+          <li>Designed omnichannel loyalty program that boosted referrals by 50% and generated $7M incremental revenue.</li>
+          <li>Improved customer retention by 18% with lifecycle management and personalized engagement campaigns.</li>
+          <li>Partnered with McKinsey to design customer journeys, improving NPS by 12 points across key accounts.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">20M+ users</span><span class="exp-tag">$7M revenue</span><span class="exp-tag">NPS +12pts</span><span class="exp-tag">18% retention uplift</span></div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div><div class="exp-role">Lead Product Analyst</div><div class="exp-co">Meltag</div><div class="exp-period">May 2016 – May 2017</div></div>
+      <div>
+        <ul class="exp-bullets">
+          <li>Built and launched B2B SaaS loyalty platform for enterprise clients including Unilever, Godrej, and CK Birla.</li>
+          <li>Managed 17 enterprise clients, delivering measurable retention uplift of 10 to 15%.</li>
+          <li>Owned P&amp;L for business unit; improved profitability by 12% YoY through efficient delivery and product enhancements.</li>
+          <li>Drove cross-functional execution, reducing implementation timelines by 25%.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">B2B SaaS</span><span class="exp-tag">17 enterprise clients</span><span class="exp-tag">P&amp;L ownership</span><span class="exp-tag">12% YoY profitability</span></div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div><div class="exp-role">Senior Programmer</div><div class="exp-co">DotPlanet</div><div class="exp-period">Mar 2014 – Apr 2016</div></div>
+      <div>
+        <ul class="exp-bullets">
+          <li>Designed SQL-based analytics and visualization systems that reduced reporting effort by 40%.</li>
+          <li>Developed enterprise reporting solutions for 3 Fortune 500 clients, improving decision-making speed.</li>
+          <li>Researched and deployed emerging BI technologies that enabled new client offerings, contributing to 15% revenue growth.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">SQL · BI</span><span class="exp-tag">3 Fortune 500 clients</span><span class="exp-tag">40% effort reduction</span></div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div><div class="exp-role">Intern – Design Engineer</div><div class="exp-co">Toshiba Plant Systems and Services Corp.</div><div class="exp-period">2013</div></div>
+      <div>
+        <ul class="exp-bullets">
+          <li>Supported design and testing of power system products as per Japanese engineering standards.</li>
+          <li>Contributed to modifications that improved product testing efficiency by 10%.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Power Systems</span><span class="exp-tag">Japanese standards</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" id="expertise">
   <div class="wrap">
     <div class="section-head">
       <div class="section-tag">Capabilities</div>
-      <div>
-        <h2>What I bring<br>to your team.</h2>
-        <p>Product instinct developed across FinTech, enterprise SaaS, and AI — with the depth to go well beyond the specification.</p>
-      </div>
+      <div><h2>What I bring<br>to your team.</h2><p>Product instinct developed across FinTech, enterprise SaaS, and AI — with the depth to go well beyond the specification.</p></div>
     </div>
-    <div class="exp-grid">
-      <div class="exp-cell">
-        <div class="exp-area">Strategy</div>
-        <div class="exp-name">Product Vision & Roadmap</div>
-        <div class="exp-body">Roadmap ownership · OKRs & KPIs · Prioritisation frameworks · Business case preparation · Competitive benchmarking</div>
-      </div>
-      <div class="exp-cell">
-        <div class="exp-area">Execution</div>
-        <div class="exp-name">Agile Delivery</div>
-        <div class="exp-body">User stories & acceptance criteria · Sprint management · CSPO certified · Jira & Confluence · Dependency mapping</div>
-      </div>
-      <div class="exp-cell">
-        <div class="exp-area">Data</div>
-        <div class="exp-name">Analytics & Insight</div>
-        <div class="exp-body">SQL · Power BI · A/B testing · Data modelling · Analytics governance · Performance measurement</div>
-      </div>
-      <div class="exp-cell">
-        <div class="exp-area">AI & Automation</div>
-        <div class="exp-name">Modern Tooling</div>
-        <div class="exp-body">Claude API · Make.com · Prompt engineering · No-code automation · AI pipeline design</div>
-      </div>
-      <div class="exp-cell">
-        <div class="exp-area">Stakeholders</div>
-        <div class="exp-name">Cross-functional Leadership</div>
-        <div class="exp-body">Engineering · Design · Legal & Compliance · Executive alignment · Vendor management · Partner engagement</div>
-      </div>
-      <div class="exp-cell">
-        <div class="exp-area">Domains</div>
-        <div class="exp-name">Industry Experience</div>
-        <div class="exp-body">FinTech · Enterprise SaaS · MarTech · Loyalty platforms · Urban mobility · Asset management</div>
+    <div class="skill-grid">
+      <div class="skill-cell"><div class="skill-area">Strategy</div><div class="skill-name">Product Vision and Roadmap</div><div class="skill-body">Roadmaps · GTM Strategy · OKRs and KPIs · Prioritisation frameworks · Competitive benchmarking · Business case preparation</div></div>
+      <div class="skill-cell"><div class="skill-area">Execution</div><div class="skill-name">Agile Delivery</div><div class="skill-body">User stories and acceptance criteria · Sprint management · CSPO certified · Jira and Confluence · Dependency mapping · Stakeholder management</div></div>
+      <div class="skill-cell"><div class="skill-area">Data</div><div class="skill-name">Analytics and Insight</div><div class="skill-body">SQL · Power BI · R · A/B testing · Data modelling · Analytics governance · Business intelligence</div></div>
+      <div class="skill-cell"><div class="skill-area">AI and Automation</div><div class="skill-name">Modern Tooling</div><div class="skill-body">Claude API · Make.com · Prompt engineering · No-code automation · Machine learning concepts</div></div>
+      <div class="skill-cell"><div class="skill-area">Stakeholders</div><div class="skill-name">Cross-functional Leadership</div><div class="skill-body">Engineering · Design · Legal and Compliance · Executive alignment · Vendor management · Partner engagement</div></div>
+      <div class="skill-cell"><div class="skill-area">Domains</div><div class="skill-name">Industry Experience</div><div class="skill-body">FinTech · Enterprise SaaS · EAM · MarTech · E-commerce · Loyalty platforms · Urban mobility</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section section-alt" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Education and Credentials</div>
+      <div><h2>Foundation and<br>formal training.</h2><p>Academic background in engineering, product management, and agile practice.</p></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-cell"><div class="edu-type">Certification</div><div class="edu-degree">Product Management</div><div class="edu-inst">Indian School of Business (ISB)</div><div class="edu-year">2022</div></div>
+      <div class="edu-cell"><div class="edu-type">Certification</div><div class="edu-degree">Certified Scrum Product Owner (CSPO)</div><div class="edu-inst">Scrum Alliance</div><div class="edu-year">Active</div></div>
+      <div class="edu-cell"><div class="edu-type">Post Graduate</div><div class="edu-degree">M.Tech, Power Systems Engineering</div><div class="edu-inst">SRM University</div><div class="edu-year">2013</div></div>
+      <div class="edu-cell"><div class="edu-type">Under Graduate</div><div class="edu-degree">B.Tech, Electrical and Electronics Engineering</div><div class="edu-inst">JNTU Hyderabad</div><div class="edu-year">2011</div></div>
+    </div>
+    <div style="margin-top:48px;padding-top:48px;border-top:1px solid var(--rule)">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:64px;align-items:start">
+        <div class="section-tag" style="padding-top:4px">Recognition</div>
+        <div>
+          <div style="font-family:var(--font-d);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:6px">Reviewer and Editor</div>
+          <div style="font-size:0.88rem;color:var(--ink-60);font-weight:300">International Journal for Scientific Research and Development</div>
+        </div>
       </div>
     </div>
   </div>
@@ -299,12 +348,8 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
 <div class="section" id="newsletter">
   <div class="wrap">
     <div class="nl-box">
-      <div>
-        <div class="nl-tag">Every Monday — Free</div>
-        <div class="nl-title">PM + AI Weekly</div>
-        <p class="nl-desc">How senior product managers use AI to find better roles, build faster, and think more clearly. Real tools and real workflows — written by a PM who builds them himself.</p>
-      </div>
-      <a href="https://kalyanpm.substack.com" target="_blank" class="nl-btn">Subscribe free →</a>
+      <div><div class="nl-tag">Every Monday — Free</div><div class="nl-title">PM + AI Weekly</div><p class="nl-desc">How senior product managers use AI to find better roles, build faster, and think more clearly. Real tools and real workflows — written by a PM who builds them himself.</p></div>
+      <a href="https://kalyanpm.substack.com" target="_blank" class="nl-btn">Subscribe free</a>
     </div>
   </div>
 </div>
@@ -335,7 +380,7 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
 
 <footer>
   <div class="footer-inner">
-    <p>© 2026 Kalyan Aravalli · Senior Product Manager</p>
+    <p>2026 Kalyan Aravalli · Senior Product Manager</p>
     <p>Hyderabad, India · Product Consultant</p>
   </div>
 </footer>
@@ -343,16 +388,16 @@ h1{animation:fadeUp 0.6s ease 0.2s both}
 <script>
 function send(e){
   e.preventDefault();
-  const n=document.getElementById('fn').value;
-  const em=document.getElementById('fe').value;
-  const m=document.getElementById('fm').value;
-  window.location.href=`mailto:aravallikalyan@gmail.com?subject=Portfolio inquiry from ${encodeURIComponent(n)}&body=${encodeURIComponent(m+'\n\nFrom: '+n+'\nEmail: '+em)}`;
+  var n=document.getElementById('fn').value;
+  var em=document.getElementById('fe').value;
+  var m=document.getElementById('fm').value;
+  window.location.href='mailto:aravallikalyan@gmail.com?subject=Portfolio inquiry from '+encodeURIComponent(n)+'&body='+encodeURIComponent(m+'\n\nFrom: '+n+'\nEmail: '+em);
   document.getElementById('fs').style.display='block';
 }
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
     e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
+    var t=document.querySelector(a.getAttribute('href'));
     if(t)t.scrollIntoView({behavior:'smooth'});
   });
 });
